@@ -20,5 +20,5 @@ Examples:
 
 Process Card Recon PDF report to generate a file list:
 
-	$ ccfl.pl -i report.pdf -o filelist.txt
+	$ crfl.pl -i report.pdf -o filelist.txt
 
