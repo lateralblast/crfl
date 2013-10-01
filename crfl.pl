@@ -4,7 +4,7 @@ use strict;
 use Getopt::Std;
 
 # Name:         crfl.pl
-# Version:      0.0.5
+# Version:      0.0.6
 # Release:      1
 # License:      Open Source 
 # Group:        System
@@ -26,6 +26,8 @@ use Getopt::Std;
 #               Added clean up subroutine
 #               0.0.5 Thu 26 Sep 2013 07:39:04 EST
 #               Cleaned up description
+#               0.0.6 Tue  1 Oct 2013 17:32:25 EST
+#               Fixed text file generation
 
 my $script_name=$0;
 my $script_version=`cat $script_name | grep '^# Version' |awk '{print \$3}'`;
@@ -105,11 +107,14 @@ sub generate_text_file {
 
 sub import_file_data {
   my $file_handle;
-  if (-e "$input_file.txt") {
+  if (-e "$text_file") {
     @file_data=do {
       open my $file_handle, "<", $text_file or die "could not open $text_file: $!";
       <$file_handle>;
     };
+  }
+  else {
+    print "File $text_file does not exist\n";
   }
 }
 
