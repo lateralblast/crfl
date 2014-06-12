@@ -1,14 +1,12 @@
 #!/usr/bin/env perl
 
-use strict;
-use Getopt::Std;
-
 # Name:         crfl.pl
-# Version:      0.0.6
+# Version:      0.0.7
 # Release:      1
-# License:      Open Source 
+# License:      CC-BA (Creative Commons By Attrbution)
+#               http://creativecommons.org/licenses/by/4.0/legalcode
 # Group:        System
-# Source:       Lateral Blast  
+# Source:       Lateral Blast
 # URL:          N/A
 # Distribution: Solaris
 # Vendor:       UNIX
@@ -16,18 +14,8 @@ use Getopt::Std;
 # Description:  Script to produce a file list from a Card Recon PDF report
 #               (Requires pdftotext to be installed)
 
-# Changes       0.0.1 Fri 20 Sep 2013 14:34:33 EST
-#               Initial version
-#               0.0.2 Tue 24 Sep 2013 15:43:44 EST
-#               Cleaned up script
-#               0.0.3 Wed 25 Sep 2013 17:35:59 EST
-#               Fixed description 
-#               0.0.4 Wed 25 Sep 2013 18:17:00 EST
-#               Added clean up subroutine
-#               0.0.5 Thu 26 Sep 2013 07:39:04 EST
-#               Cleaned up description
-#               0.0.6 Tue  1 Oct 2013 17:32:25 EST
-#               Fixed text file generation
+use strict;
+use Getopt::Std;
 
 my $script_name=$0;
 my $script_version=`cat $script_name | grep '^# Version' |awk '{print \$3}'`;
@@ -125,7 +113,7 @@ sub process_file_data {
   my $next_line;
   my $file_name;
   for ($counter=0;$counter<@file_data;$counter++) {
-    $line=@file_data[$counter]; 
+    $line=@file_data[$counter];
     chomp($line);
     if ($line=~/^$base_dir\/[a-z]/) {
       $next=$counter+1;

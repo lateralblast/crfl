@@ -1,0 +1,15 @@
+# Changes
+# 0.0.1 Fri 20 Sep 2013 14:34:33 EST
+# Initial version
+# 0.0.2 Tue 24 Sep 2013 15:43:44 EST
+# Cleaned up script
+# 0.0.3 Wed 25 Sep 2013 17:35:59 EST
+# Fixed description
+# 0.0.4 Wed 25 Sep 2013 18:17:00 EST
+# Added clean up subroutine
+# 0.0.5 Thu 26 Sep 2013 07:39:04 EST
+# Cleaned up description
+# 0.0.6 Tue  1 Oct 2013 17:32:25 EST
+# Fixed text file generation
+# 0.0.7 Thu 12 Jun 2014 15:49:56 EST
+# Moved changelog to separate file and added license information
